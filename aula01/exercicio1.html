@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imersão Dev da Alura - aula01</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        strong.reprovado {
+            color: red;
+        }
+        strong.aprovado {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de média</h1>
+    <p>Descubra qual a sua média em todas as provas!</p>
+    <script>
+        var nome = 'Nícolas'
+        var nota1 = 9.3
+        var nota2 = 5.5
+        var nota3 = 6.1
+        var nota4 = 1.9
+        var notaFinal = (nota1 + nota2 + nota3 + nota4) / 4
+
+        var notaFixada =  notaFinal.toFixed(1)
+
+        document.write('Bem vindo ' + nome + '<br>')
+        document.write('Nota final = ' + notaFixada)
+
+        if (notaFixada >= 5) {
+            document.write('<br> <strong class="aprovado">PASSOU!!!</strong> :)')
+        }
+        else {
+            document.write('<br> <strong class="reprovado">Não passou</strong>  ;-;')
+        }
+    </script>
+</body>
+</html>
