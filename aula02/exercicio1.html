@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moeda</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        input#num1 {
+            color: black;
+            background-color: white;
+        }
+        input#botao {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+    <p>Descubra o valor em dolar USD$</p>
+    <input type="number" name="num1" id="num1"> <br><br>
+    <input type="submit" value="Converter" id="botao" onclick="Converter()">
+    <div id="valor"></div>
+    <script>
+        function Converter() {
+            var numero = document.getElementById('num1')
+            var valor = document.getElementById('valor')
+
+            var real = Number(numero.value)
+            var dolar = 5.16
+            var dolarParaReal = real * dolar
+
+            var convertido = 'O resultado em real R$' + dolarParaReal.toFixed(2).replace('.' , ',')
+            valor.innerHTML = convertido
+        }
+    </script>
+</body>
+</html>
