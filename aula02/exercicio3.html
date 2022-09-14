@@ -1,14 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de temperaturas</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        input#cels {
+            margin: 10px;
+            width: 100px;
+        }
+        input#botao {
+            padding: 10px;
+            width: 100px;
+            height: 50px;
+            font-weight: bold;
+        }
+
+        div {
+            padding-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Fahrenheit</h1>
-    <h1>Kelvin</h1>
-    <h1>Celsius</h1>
+    <h1>Conversor de Temperatura</h1>
+    <p>Dígite a temperatura em graus Celsius</p>
+    <input type="number" name="cels" id="cels"> <br> <br>
+    <input type="button" value="Converter" id="botao" onclick="Converter()">
+    <div id="fahrenheit">
+        
+    </div>
+    <div id="kelvin">
+        
+    </div>
+    <script>
+        function Converter() {
+            var grau = document.getElementById('cels')
+            var f = document.querySelector('div#fahrenheit')
+            var k = document.querySelector('div#kelvin')
+
+            var celsius = Number(grau.value)
+            var Fahrenheit = celsius * 1.8 + 32
+            var Kelvin = celsius + 273.15
+
+            var convertidoK = '' + celsius + ' °C   ==> ' + Kelvin.toFixed(2).replace('.' , ',') + ' °K'
+            var convertidoF = '' + celsius + ' °C   ==>  ' + Fahrenheit.toFixed(2).replace('.' , ',') + ' °F' 
+            f.innerHTML = convertidoF
+            k.innerHTML = convertidoK
+
+        }
+    </script>
 </body>
 </html>

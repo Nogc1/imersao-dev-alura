@@ -8,10 +8,46 @@
 </head>
 <body>
     <h1>Conversor de Moedas</h1>
-    <h2>Bitcoin</h2>
-    <h2>Euro</h2>
-    <h2>Dolar</h2>
-    <h2>Real</h2>
-    <h2>Ienes</h2>
+    <input type="text" name="moeda" id="moeda">
+    <input type="number" name="valor" id="valor">
+    <input type="button" value="Converter" onclick="converter()">
+   <div id="caixa">
+
+   </div>
+    <script>
+        function converter() {
+            var val = document.getElementById('valor')
+            var tipoMoeda = document.getElementById('moeda')
+            var caixa = document.querySelector('div#caixa') 
+
+            var Real = Number(val.value)
+            var tipo = String(tipoMoeda.value)
+
+            var Euro = Real * 0.19
+            var Bitcoin = Real * 0.0000097
+            var Dolar = Real * 0.19
+            var Iene = Real * 27.65
+
+            if (tipo == 'EURO') {
+                caixa.innerHTML = 'R$' + Real + ' ==> €' + Euro.toFixed(2).replace('.' , ',') +
+            } 
+            
+            if (tipo == 'IENE') {
+                caixa.innerHTML = 'R$' + Real + ' ==> ¥' + Iene.toFixed(2).replace('.' , ',') +
+            }
+
+            if (tipo == 'DOLAR') {
+                caixa.innerHTML = 'R$' + Real + ' ==> US$' + Dolar.toFixed(2).replace('.' , ',') +
+            }
+
+            if (tipo == 'BITCOIN') {
+                caixa.innerHTML = 'R$' + Real + ' ==> ₿' + Bitcoin.toFixed(2).replace('.' , ',') +
+            }
+
+            else {
+               caixa.innerHTML = 'Não identificamos o tipo de moeda '+ tipo + 'Por favor insira outro valor' 
+            }
+        }
+    </script>
 </body>
 </html>
