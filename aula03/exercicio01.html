@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentalista</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, black 55%, red);
+            background-attachment: fixed;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        input#num {
+            padding: 10px;
+            margin: 20px;
+        }
+
+        input#botao {
+            padding: 10px;
+            border-radius: 10px;
+        }
+        strong#certo {
+            color: rgb(2, 238, 2);
+            font-weight: bold;
+        }
+        strong#errado {
+            color: crimson;
+            font-weight: bold;
+        }
+        div {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Mentalista
+    </h1>
+    <p>Dígite um número de 0 a 10</p>
+    <input type="number" name="num" id="num"> <br>
+    <input type="button" value="Chutar" onclick="chutar()" id="botao">
+    <div id="computador">
+
+    </div>
+    <script>
+        var numeroSecreto = parseInt(Math.random() * 11)
+        
+        function chutar() {
+            var chute = parseInt(document.getElementById('num').value)
+            var comp = document.querySelector('div#computador')   
+            
+            if (chute == numeroSecreto) {
+                comp.innerHTML = '<strong id="certo">ACERTOU!!!</strong>'
+            } else if (chute > 10 || chute < 0) {
+                comp.innerHTML = 'Você deve dígitar um número entre 0 e 10'
+            } else {
+                comp.innerHTML = '<strong id="errado">ERROU!!!</strong> Tente Novamente'
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -8,8 +8,15 @@
 </head>
 <body>
     <h1>Conversor de Moedas</h1>
+    <p>
+        Qual tipo de Moeda ex:Euro, dolar
+    </p>
     <input type="text" name="moeda" id="moeda">
-    <input type="number" name="valor" id="valor">
+    <br>
+    <p>
+        Dígite o valor em Real
+    </p>
+    <input type="number" name="valor" id="valor"> <br>
     <input type="button" value="Converter" onclick="converter()">
    <div id="caixa">
 
@@ -21,7 +28,7 @@
             var caixa = document.querySelector('div#caixa') 
 
             var Real = Number(val.value)
-            var tipo = String(tipoMoeda.value)
+            var tipo = String(tipoMoeda.value).toUpperCase()
 
             var Euro = Real * 0.19
             var Bitcoin = Real * 0.0000097
@@ -29,23 +36,23 @@
             var Iene = Real * 27.65
 
             if (tipo == 'EURO') {
-                caixa.innerHTML = 'R$' + Real + ' ==> €' + Euro.toFixed(2).replace('.' , ',') +
+                caixa.innerHTML = 'R$' + Real + ' ==> €' + Euro.toFixed(2).replace('.' , ',') 
             } 
             
             if (tipo == 'IENE') {
-                caixa.innerHTML = 'R$' + Real + ' ==> ¥' + Iene.toFixed(2).replace('.' , ',') +
+                caixa.innerHTML = 'R$' + Real + ' ==> ¥' + Iene.toFixed(2).replace('.' , ',') 
             }
 
             if (tipo == 'DOLAR') {
-                caixa.innerHTML = 'R$' + Real + ' ==> US$' + Dolar.toFixed(2).replace('.' , ',') +
+                caixa.innerHTML = 'R$' + Real + ' ==> US$' + Dolar.toFixed(2).replace('.' , ',') 
             }
 
             if (tipo == 'BITCOIN') {
-                caixa.innerHTML = 'R$' + Real + ' ==> ₿' + Bitcoin.toFixed(2).replace('.' , ',') +
+                caixa.innerHTML = 'R$' + Real + ' ==> ₿' + Bitcoin.toFixed(2).replace('.' , ',') 
             }
 
             else {
-               caixa.innerHTML = 'Não identificamos o tipo de moeda '+ tipo + 'Por favor insira outro valor' 
+               caixa.innerHTML = 'Não identificamos o tipo de moeda '+ tipo + ' Por favor insira outro valor' 
             }
         }
     </script>
